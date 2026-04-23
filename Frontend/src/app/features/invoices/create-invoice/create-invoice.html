@@ -1,0 +1,52 @@
+<h2>Create Invoice</h2>
+
+<div>
+
+<label>Product</label>
+
+<select [(ngModel)]="selectedProductId">
+<option value="">Select Product</option>
+
+<option *ngFor="let p of products" [value]="p.id">
+{{p.name}} - ₹{{p.price}}
+</option>
+
+</select>
+
+
+<label>Quantity</label>
+<input type="number" [(ngModel)]="quantity">
+
+<button (click)="addItem()">Add Item</button>
+
+</div>
+
+<hr>
+
+<table border="1">
+
+<tr>
+<th>Product</th>
+<th>Price</th>
+<th>Qty</th>
+<th>Total</th>
+</tr>
+
+<tr *ngFor="let item of invoiceItems">
+
+<td>{{item.name}}</td>
+<td>{{item.price}}</td>
+<td>{{item.quantity}}</td>
+<td>{{item.total}}</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Subtotal: ₹{{subtotal}}</h3>
+<h3>Tax (10%): ₹{{tax}}</h3>
+<h2>Grand Total: ₹{{grandTotal}}</h2>
+
+<button (click)="generateInvoice()">Generate Invoice</button>

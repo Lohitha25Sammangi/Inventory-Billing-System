@@ -1,0 +1,19 @@
+<h2>Add Product</h2>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <label>Product Name</label>
+    <input typr="text" formControlName="name">
+    <br><br>
+    <label>Price</label>
+    <input typr="number" formControlName="price">
+    <br><br>
+    <label>stock Quantity</label>
+    <input typr="number" formControlName="stockQuantity">
+    <br><br>
+    <label>Category Id</label>
+    <input typr="number" formControlName="categoryId">
+    <br><br>
+    <label>Tax Percentage</label>
+    <input typr="number" formControlName="taxPercentage">
+    <br><br>
+    <button type="submit">Add Product</button>
+</form>
